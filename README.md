@@ -9,64 +9,64 @@
 ## Installation Steps
 
 1. Update system packages:
-   '''bash
+   ```bash
    sudo apt update && sudo apt upgrade -y
-   '''
+   ```
    
 2. Install Java (OpenJDK 11):
- '''bash
+ ```bash
    sudo apt install openjdk-11-jdk -y
-  '''
+  ```
 3. Verify Java installation:
- '''bash
+ ```bash
   java -version
- '''
+ ```
 4. Add Jenkins repository and key:
-  '''bash
+  ```bash
   curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo tee \
      /usr/share/keyrings/jenkins-keyring.asc > /dev/null
-'''
- '''bash
+  ```
+```bash
   echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
      https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
      /etc/apt/sources.list.d/jenkins.list > /dev/null
-'''
+```
 5. Install Jenkins:
- '''bash
-  sudo apt update
-'''
-'''bash
+ ```bash
+   sudo apt update
+```
+```bash
     sudo apt install jenkins -y
-'''
+```
 6. Start Jenkins service:
- '''bash
+ ```bash
   sudo systemctl start jenkins
-'''
-'''bash
+```
+```bash
    sudo systemctl enable jenkins
-'''
+```
 8. Check Jenkins status:
-   '''bash
+```bash
    sudo systemctl status jenkins
-'''
+ ```
 10. Open firewall (if enabled):
-   '''bash
+ ```bash
     sudo ufw allow 8080
-'''
-'''bash
+```
+```bash
    sudo ufw enable
-'''
-'''bash
+```
+```bash
    sudo ufw status
-'''
+```
 12. Get initial admin password:
-  '''bash
+ ```bash
  sudo cat /var/lib/jenkins/secrets/initialAdminPassword
-'''
+```
 14. Access Jenkins in your browser:
-'''bash
+```bash
      http://your-server-ip:8080
-'''
+```
 16. Follow the setup wizard to complete installation:
     - Paste the admin password
     - Install suggested plugins
